@@ -1,0 +1,4 @@
+interface CargoAuto
+{
+    void transportCargo();
+}

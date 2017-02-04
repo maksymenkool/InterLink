@@ -1,0 +1,4 @@
+interface PassangersAuto
+{
+    void transportPassangers();
+}

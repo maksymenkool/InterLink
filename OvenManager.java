@@ -16,6 +16,5 @@ public class OvenManager
         int time = oven.getTime();
 
         oven.printCook(mode, temp, time);
-        System.exit(0);
     }
 }

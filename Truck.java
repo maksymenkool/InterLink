@@ -1,25 +1,31 @@
 public class Truck extends Vehicle implements CargoAuto
 {
-    /**
-     * @param cargo_weight
-     */
-    private int cargo_weight;
+    private static final int MAX_SPEED = 140;
 
     /**
      * The Truck class constructor
      */
-    public Truck(int average_speed, int gear, int cargo_weight)
+    public Truck()
     {
-        super(average_speed, gear);
-        this.cargo_weight = cargo_weight;
+        super.setMaxSpeed(MAX_SPEED);
     }
-    
+
     /**
      * Transport cargo
      */
     public void transportCargo()
     {
-        System.out.println("Cargo delivery.\n"
-            + "The tonnage of " + this.cargo_weight + " tons.");
+        System.out.println("It is a BIG TRUCK:\n"
+            + "Cargo delivery.\n"
+            + "The tonnage of 20 tons.");
+    }
+
+    /**
+     * Print states
+     */
+    void printStates()
+    {
+        this.transportCargo();
+        super.printStates();
     }
 }

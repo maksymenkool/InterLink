@@ -1,42 +1,40 @@
 public class Vehicle
 {
-    private int speed = 0;
-    private int gear = 1;
+    private static final int SPEED_STEP = 5;
     
-    /**
-     * The Vehicle class constructor
-     */
-    public Vehicle(int average_speed, int gear)
-    {
-        this.speed = average_speed;
-        this.gear = gear;
-    }
+    private int speed = 0;
+    private int max_speed;
 
     /**
      * Change gear
      * @param new_gear
      */
-    void changeGear(int new_gear)
+    void setMaxSpeed(int max_speed)
     {
-         this.gear = new_gear;
+         this.max_speed = max_speed;
+    }
+
+    public int getMaxSpeed()
+    {
+        return this.max_speed;
     }
 
     /**
      * Speed up
-     * @param increment
      */
-    void speedUp(int increment)
+    void speedUp()
     {
-         this.speed = this.speed + increment;   
+        if (this.speed >= this.max_speed) return;
+        this.speed += SPEED_STEP;
     }
 
     /**
      * Speed down
-     * @param decrement
      */
-    void speedDown(int decrement)
+    void speedDown()
     {
-         this.speed = this.speed - decrement;
+        if (this.speed == 0) return;
+        this.speed -= SPEED_STEP;
     }
 
     /**
@@ -45,7 +43,6 @@ public class Vehicle
     void printStates()
     {
          System.out.println("Average speed: " + this.speed
-             + " km/h.\nGear: " + this.gear + ".\n"
-             + "* * * * * * * * * * * * * * * *");
+             + " km/h.\n" + "* * * * * * * * * * * * * * * *");
     }
 }

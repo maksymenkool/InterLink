@@ -1,27 +1,13 @@
 public class Pickup extends Vehicle implements CargoAuto, PassangersAuto
 {
-    /**
-     * @param num_passengers
-     */
-    private int num_passengers;
-
-    /**
-     * @param cargo_weight
-     */
-    private int cargo_weight;
+    private static final int MAX_SPEED = 180;
 
     /**
      * The Pickup class constructor
      */
-    public Pickup(
-        int average_speed,
-        int gear,
-        int num_passengers,
-        int cargo_weight
-    ) {
-        super(average_speed, gear);
-        this.num_passengers = num_passengers;
-        this.cargo_weight = cargo_weight;
+    public Pickup()
+    {
+        super.setMaxSpeed(MAX_SPEED);
     }
 
     /**
@@ -29,8 +15,9 @@ public class Pickup extends Vehicle implements CargoAuto, PassangersAuto
      */
     public void transportCargo()
     {
-        System.out.println("Cargo delivery.\n"
-            + "The tonnage of " + this.cargo_weight + " tons.");
+        System.out.println("It is a PICKUP:\n"
+            + "Cargo delivery.\n"
+            + "The tonnage of 5 tons.");
     }
 
     /**
@@ -38,7 +25,16 @@ public class Pickup extends Vehicle implements CargoAuto, PassangersAuto
      */
     public void transportPassangers()
     {
-        System.out.println("Transportation of "
-            + this.num_passengers + " passengers.");
+        System.out.println("Transportation of 3 passengers.");
+    }
+
+    /**
+     * Print states
+     */
+    void printStates()
+    {
+        this.transportCargo();
+        this.transportPassangers();
+        super.printStates();
     }
 }

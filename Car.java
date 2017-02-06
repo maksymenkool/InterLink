@@ -1,17 +1,13 @@
 public class Car extends Vehicle implements PassangersAuto
 {
-    /**
-     * @param num_passengers
-     */
-    private int num_passengers;
+    private static final int MAX_SPEED = 240;
 
     /**
      * The Car class constructor
      */
-    public Car(int average_speed, int gear, int num_passengers)
+    public Car()
     {
-        super(average_speed, gear);
-        this.num_passengers = num_passengers;
+        super.setMaxSpeed(MAX_SPEED);
     }
 
     /**
@@ -19,7 +15,16 @@ public class Car extends Vehicle implements PassangersAuto
      */
     public void transportPassangers()
     {
-        System.out.println("Transportation of "
-            + this.num_passengers + " passengers.");
+        System.out.println("It is a CAR:\n"
+            + "Transportation of 5 passengers.");
+    }
+
+    /**
+     * Print states
+     */
+    void printStates()
+    {
+        this.transportPassangers();
+        super.printStates();
     }
 }

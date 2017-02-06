@@ -6,15 +6,18 @@ public class Vehicle
     private int max_speed;
 
     /**
-     * Change gear
-     * @param new_gear
+     * Set max_speed
+     * @param max_speed
      */
     void setMaxSpeed(int max_speed)
     {
          this.max_speed = max_speed;
     }
 
-    public int getMaxSpeed()
+    /**
+	* Get max_speed
+	*/
+	public int getMaxSpeed()
     {
         return this.max_speed;
     }
@@ -42,7 +45,7 @@ public class Vehicle
      */
     void printStates()
     {
-         System.out.println("Average speed: " + this.speed
+         System.out.println("Speed: " + this.speed
              + " km/h.\n" + "* * * * * * * * * * * * * * * *");
     }
 }
